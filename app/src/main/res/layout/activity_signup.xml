@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/un"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="246dp"
@@ -32,29 +32,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/ps1"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="Type Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/un"
+        app:layout_constraintTop_toBottomOf="@+id/un" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/ps2"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="49dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintStart_toStartOf="@+id/ps1"
+        app:layout_constraintTop_toBottomOf="@+id/ps1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="117dp"

@@ -16,11 +16,11 @@
         android:text="Sign In "
         android:textColor="#02deff"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="@+id/usern"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/usern"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="309dp"
@@ -32,18 +32,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/userp"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="66dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextText"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="@+id/usern"
+        app:layout_constraintTop_toBottomOf="@+id/usern" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="130dp"

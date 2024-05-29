@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     Button b1,b2;
-    MyDBHelper mydb;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b1.setOnClickListener(this);
         b2=findViewById(R.id.signup);
         b2.setOnClickListener(this);
-        mydb=new MyDBHelper(this);
+
     }
 
     @Override
