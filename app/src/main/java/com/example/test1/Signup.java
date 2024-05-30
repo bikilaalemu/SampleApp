@@ -52,7 +52,7 @@ public class Signup extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-       if(getPass1()==getPass2()){
+       if(getPass1().equals(getPass2())){
            password=getPass1();
            boolean res=dbHelper.insert(getUsername(),password);
            if(res){

@@ -34,14 +34,10 @@ public class MyDBHelper extends SQLiteOpenHelper {
         return (r!=-1)? true : false;
     }
 
-    public Cursor getData(){
-        Cursor c=null;
+    public Cursor getData(String username,String password){
         SQLiteDatabase db=getReadableDatabase();
-        c=db.rawQuery("select username,password from users",null);
-        if(c.getCount()>0){
-
-            return c;
-        }
-        return null;
+        String [] myParams=new String[]{username,password};
+        Cursor c=db.rawQuery("select username,password from users where username=? AND password=?",myParams);
+        return c;
     }
 }

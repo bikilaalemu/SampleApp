@@ -2,6 +2,7 @@ package com.example.test1;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ch5 extends AppCompatActivity {
    ConnectivityManager cmgr;
    NetworkInfo info;
-   Button checknet;
+   Button checknet,signout;
    TextView status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class ch5 extends AppCompatActivity {
         cmgr= (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         checknet=findViewById(R.id.checknet);
         status=findViewById(R.id.status);
-
+        signout=findViewById(R.id.signout);
         checknet.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -37,5 +38,15 @@ public class ch5 extends AppCompatActivity {
                 }
             }
         });
+
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+    }
+    public void telephone(View view){
+        startActivity(new Intent(getApplicationContext(),MyTelephone.class));
     }
 }

@@ -20,6 +20,7 @@ public class Signin extends AppCompatActivity implements View.OnClickListener{
    EditText usern,userp;
    String username,password;
    MyDBHelper dbHelper;
+    Cursor cursor;
     public String getUsername() {
         username=usern.getText().toString();
         return username;
@@ -30,7 +31,6 @@ public class Signin extends AppCompatActivity implements View.OnClickListener{
         return password;
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +40,27 @@ public class Signin extends AppCompatActivity implements View.OnClickListener{
         usern=findViewById(R.id.usern);
         userp=findViewById(R.id.userp);
 
+
         login=findViewById(R.id.login);
         login.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-       /* Cursor cursor=dbHelper.getData();
-        if(getUsername()==cursor.getString(0) && getPassword()==cursor.getString(1)){
-            Toast.makeText(this, "Welcome "+getUsername(), Toast.LENGTH_SHORT).show();
-        }*/
-        startActivity(new Intent(getApplicationContext(),ch5.class));
+        cursor = dbHelper.getData(getUsername(),getPassword());
+        if (cursor.getCount() == 0) {
+            Toast.makeText(this, "No Records Found", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            while (cursor.moveToNext()) {
+                if (getUsername().equals(cursor.getString(0)) && getPassword().equals(cursor.getString(1))) {
+                    Toast.makeText(this, "Welcome "+getUsername(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), ch5.class));
+                } else {
+                    Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            }
+        }
     }
 }
