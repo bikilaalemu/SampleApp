@@ -1,6 +1,7 @@
 package com.example.test1;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -45,9 +46,10 @@ public class Signin extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        Cursor cursor=dbHelper.getData();
+       /* Cursor cursor=dbHelper.getData();
         if(getUsername()==cursor.getString(0) && getPassword()==cursor.getString(1)){
             Toast.makeText(this, "Welcome "+getUsername(), Toast.LENGTH_SHORT).show();
-        }
+        }*/
+        startActivity(new Intent(getApplicationContext(),ch5.class));
     }
 }

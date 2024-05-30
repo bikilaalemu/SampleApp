@@ -1,5 +1,6 @@
 package com.example.test1;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -8,11 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class ch5 extends AppCompatActivity {
    ConnectivityManager cmgr;
@@ -29,10 +28,13 @@ public class ch5 extends AppCompatActivity {
         status=findViewById(R.id.status);
 
         checknet.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 info=cmgr.getActiveNetworkInfo();
-                status.setText(info.toString());
+                if(info!=null) {
+                    status.setText("Net Status :" + info);
+                }
             }
         });
     }
